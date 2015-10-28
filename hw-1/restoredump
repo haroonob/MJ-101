@@ -1,0 +1,63 @@
+
+C:\Users\Haroon>cd C:\Users\Haroon\Downloads\hw1-1.184820ec29b6
+
+C:\Users\Haroon\Downloads\hw1-1.184820ec29b6>mongorestore
+2015-10-17T14:43:08.383+0300    using default 'dump' directory
+2015-10-17T14:43:08.432+0300    building a list of dbs and collections to restor
+e from dump dir
+2015-10-17T14:43:08.434+0300    reading metadata file from dump\m101\funnynumber
+s.metadata.json
+2015-10-17T14:43:08.435+0300    reading metadata file from dump\m101\hw1.metadat
+a.json
+2015-10-17T14:43:08.505+0300    restoring m101.hw1 from file dump\m101\hw1.bson
+2015-10-17T14:43:08.506+0300    restoring m101.funnynumbers from file dump\m101\
+funnynumbers.bson
+2015-10-17T14:43:09.227+0300    restoring indexes for collection m101.hw1 from m
+etadata
+2015-10-17T14:43:09.227+0300    restoring indexes for collection m101.funnynumbe
+rs from metadata
+2015-10-17T14:43:09.249+0300    finished restoring m101.funnynumbers (100 docume
+nts)
+2015-10-17T14:43:09.249+0300    finished restoring m101.hw1 (1 document)
+2015-10-17T14:43:09.251+0300    done
+
+C:\Users\Haroon\Downloads\hw1-1.184820ec29b6>mongo
+MongoDB shell version: 3.0.6
+connecting to: test
+> use mj101
+switched to db mj101
+> show collections
+> ;
+> use m101
+switched to db m101
+> show collections
+funnynumbers
+hw1
+system.indexes
+> db.funnynumber.find();
+> db.funnynumber
+m101.funnynumber
+> db.funnynumbers.find();
+{ "_id" : ObjectId("50778ce69331a280cf4bcf7d"), "value" : 87 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf7e"), "value" : 34 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf7f"), "value" : 23 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf80"), "value" : 71 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf81"), "value" : 26 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf82"), "value" : 8 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf83"), "value" : 91 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf84"), "value" : 99 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf85"), "value" : 49 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf86"), "value" : 25 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf87"), "value" : 69 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf88"), "value" : 4 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf89"), "value" : 90 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf8a"), "value" : 39 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf8b"), "value" : 41 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf8c"), "value" : 17 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf8d"), "value" : 95 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf8e"), "value" : 14 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf8f"), "value" : 1 }
+{ "_id" : ObjectId("50778ce69331a280cf4bcf90"), "value" : 62 }
+> db.hw1.find()
+{ "_id" : ObjectId("50773061bf44c220307d8514"), "answer" : 42, "question" : "The
+ Ultimate Question of Life, The Universe and Everything" }
