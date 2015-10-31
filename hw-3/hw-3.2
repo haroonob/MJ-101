@@ -1,0 +1,22 @@
+//findByPermalink
+ post=postsCollection.find(eq("permalink",permalink)).first();
+ 
+ //find all post in sorting order with limits
+
+ posts=  postsCollection.find().sort(orderBy(descending("date"))).limit(limit).into(new ArrayList<Document>());;
+ 
+ 
+ //Add post code
+ 
+        Document post = new Document();
+        post.put("author", username);
+        post.put("title", title);
+        post.put("body", body);
+        post.put("tags", tags);
+        post.put("comments", new ArrayList<String>());
+        post.put("permalink", permalink);
+        post.put("date", new BsonDateTime(System.currentTimeMillis()));
+        postsCollection.insertOne(post);
+        
+        
+        

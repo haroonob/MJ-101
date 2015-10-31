@@ -16,7 +16,7 @@
  */
 
 package com.demo.mongodb.w2;
-
+import static com.demo.mongodb.w2.Helper.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -185,7 +185,7 @@ public class SortSkipLimitTest {
             int ctr=0;
             for(Document doc:docs){
                 System.out.println("Document # "+ ctr++);
-                Helper.prettyPrintJSON(doc);
+                prettyPrintJSON(doc);
             }
 
             System.out.println("Total docs "+ctr);

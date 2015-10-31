@@ -1,0 +1,9 @@
+//Add comments code
+        Document doc=findByPermalink(permalink);
+    	ArrayList<Document> comments =(ArrayList<Document>)doc.get("comments");
+    	Document comment=new Document();
+    	comment.put("author", name);
+    	comment.put("body", body);
+    	comment.put("email", email);
+       	comments.add(comment);
+    	postsCollection.updateOne(eq("_id",doc.get("_id")),  new Document("$set", new Document("comments", comments)));
