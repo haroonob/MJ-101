@@ -1,0 +1,10 @@
+please check com.demo.mongodb.w3. RemoveMinScoreTest
+
+or see following javascript code
+
+
+ var list = db.students.aggregate([ {$unwind:"$scores"} , {$match:{"scores.type":"homework"}}  ,{$group:{_id:"$_id",minScore :{$min:"$scores.score"}}}, {$sort :{"_id" : -1}} ])
+ 
+ list.forEach(function(obj){
+   db.students.update({"scores.type":"homework","scores.score" :obj.minScore},{$pull : {"scores" :{"type":"homework","score" :obj.minScore}}})
+  });

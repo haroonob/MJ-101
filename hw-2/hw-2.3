@@ -1,0 +1,4 @@
+> var list=db.grades.aggregate([{$match:{type:"homework"}},{$group:{_id:'$studen
+t_id',min_score:{$min:'$score'}}},{$sort:{score:-1}}])
+> list.forEach(function(obj){db.grades.remove({type:'homework',student_id:obj._i
+d,score:obj.min_score})})

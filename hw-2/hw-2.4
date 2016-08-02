@@ -1,0 +1,9 @@
+ --addUser function create an object suitable for insertion into the user collection
+ Document doc = new Document("_id",username).append("password",passwordHash);	
+ --if there is an email address specified, add it to the document too.
+ doc.append("email", email);
+ --insert the document into the user collection here
+ usersCollection.insertOne(doc);
+ 
+ --validate function 
+user=usersCollection.find(new Document().append("_id", username)).first();
